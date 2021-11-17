@@ -50,21 +50,21 @@
             var resultado = 0;
 
             if(op.value == '+'){
-                resultado = somar(x.value, y.value);
+                Resultado = somar(x.value, y.value);
             }
             else{
                 if(op.value =="-"){
-                    resultado = sub(x.value, y.value);
+                    Resultado = sub(x.value, y.value);
                    }
                 }
                 else{
                     if(op.value =="*"){
-                        resultado = mult(x.value, y.value)
+                        Resultado = mult(x.value, y.value)
                        }
                     }
                     else{
                         if(op.value =='/'){
-                            resultado = divisao(x.value y.value)
+                            Resultado = divisao(x.value y.value)
                            }
                         }
            elementoDados.innerHTML += `
@@ -76,20 +76,20 @@
             </tr> ` ;
         }
         function somar(x, y){
-           return = parseFloat(x) + parseFloat(y);
-            
+            var Resultado = parseFloat(x) + parseFloat(y);
+            return Resultado;
         }
         function sub(x, y){
-            return = parseFloat(x) - parseFloat(y);
-           
+            var Resultado = parseFloat(x) - parseFloat(y);
+            return Resultado;
         }
         function mult(x, y){
-           return = parseFloat(x) * parseFloat(y);
-
+            var Resultado = parseFloat(x) * parseFloat(y);
+            return Resultado;
         }
         function divisao(x, y){
-           return = parseFloat(x) / parseFloat(y);
-            
+            var Resultado = parseFloat(x) / parseFloat(y);
+            return Resultado;
         }
     </script>
 </body>
