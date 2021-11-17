@@ -4,71 +4,93 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/estilo.css">
-    <title>Site Com bootstrap</title>
+    <title>Projeto Javascript</title>
 </head>
 <body>
-    <div class="container teste">
-        <h1>Round 6</h1>
-        
-     <style>
-         img{
-             width: 500px;
-         }
-     </style>
-    </div>
-    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
-    <div class="container">
-        <style> h1{
-            color:red;
-            width: auto;
-            font-style: italic;
+    <fieldset>
+        <legend>Calculadora</legend>
+         <input type="text" id="n1">
+         <select name="" id="op">
+             <option value="+">+</option>
+             <option value="-">-</option>
+             <option value="*">*</option>
+             <option value="/">/</option>
+         </select>
+         <input type="text" id="n2">
+    </fieldset>
+    <button id="btnCalc">Calcular</button>
+
+    <table>
+        <tr>
+            <th>Valor 1</th>
+            <th>Valor 2</th>
+            <th>Operação</th>
+            <th>Resultado</th>
+        </tr>
+
+        <tbody id="dados">
+           <tr>
+               <td>10</td>
+               <td>10</td>
+               <td>*</td>
+               <td>100</td>
+           </tr>
+        </tbody>
+
+    </table>
+    <script>
+        var x = document. getElementById("n1");
+        var y = document. getElementById("n2");
+        var op = document. getElementById("op");
+
+        var elementoBtnCalc = document.getElementById("btnCalc");
+        var elementoDados = document.getElementById("dados");
+
+        elementoBtnCalc.onclick = function(){
+            var resultado = 0;
+
+            if(op.value == '+'){
+                resultado = somar(x.value, y.value);
+            }
+            else{
+                if(op.value =="-"){
+                    resultado = sub(x.value, y.value);
+                   }
+                }
+                else{
+                    if(op.value =="*"){
+                        resultado = mult(x.value, y.value)
+                       }
+                    }
+                    else{
+                        if(op.value =='/'){
+                            resultado = divisao(x.value y.value)
+                           }
+                        }
+           elementoDados.innerHTML += `
+           <tr>
+                <td>{x.value}</td>
+                <td>{y.value}</td>
+                <td>{op.value}</td>
+                <td>{resultado}</td>
+            </tr> ` ;
         }
-        h2{
-            color: black;
-            width: auto;
-            font-style: italic;
+        function somar(x, y){
+            var Resultado = parseFloat(x) + parseFloat(y);
+            return Resultado;
         }
-</style>
-<style>
-    div{
-    color:black;
-    font-style: normal;
-
-    }
-    
-</style> 
-
-
-        <h2>ola meu nome é Luan Brusarosco</h2>
-        
-        <img src=" https://images.app.goo.gl/jaaEFVdXK9KZagMt5 "alt=" https://images.app.goo.gl/jaaEFVdXK9KZagMt5 ">
-        
-        <h3>Primeiro episódio: 17 de setembro de 2021;
-Compositor: Jung Jae-il;
-Criador: Hwang Dong-hyuk;
-Emissora original: Netflix;
-Idioma: Coreano;
-Gêneros: Drama, Suspense, Terror.</h3>
-        <h3>Round 6 é o novo thriller sul-coreano que vem destruindo a Netflix desde sua estreia em 17 de setembro de 2021. Durante sua primeira temporada de nove episódios, Round 6 oferece uma premissa violenta única que tem partes iguais “Jogos Vorazes”, ” The Purge” e o thriller japonês de 2014 “As the Gods Will”. No entanto, a primeira temporada de Round 6 não é apenas um festival de choque de quase 10 horas. Também tem algo a dizer sobre o mundo em que vivemos.</h3>
-        <h3>Lee Jung-jae começa como Seong Gi-hun, um homem que está sem sorte em quase todos os sentidos. Então, um dia, um estranho misterioso oferece a ele uma oportunidade – a chance de competir contra 455 outras pessoas desesperadas por uma quantia de dinheiro capaz de mudar sua vida. Infelizmente, acontece que a competição em questão é uma série de jogos infantis sádicos em que os competidores são forçados a trapacear até a morte. Enquanto Gi-hun luta para sobreviver, ele descobre mais sobre a competição em si e sobre o que ele pode ser capaz como pessoa.</h3>
-  <div>
-            <h3>No final da primeira temporada de Round 6, Gi-hun vence o concurso, mas é o mais vazio que uma vitória pode ser. Aqui está o que acontece no final da 1ª Temporada de Round 6.</h3>
-            <h3>No elenco estão, Lee Jung-Jae (Seong Gi-Hun), Park Hae-Soo (Cho Sang-Woo), Jung Ho-Yeon (Sae-Byeok), Wi Ha-Joon (Hwang Jun-Ho), Kim Jo-Ryung (Han Mi-Nyeo), Heo Seung-Tae (Jang Deok-Su), Oh Young-Soo (Oh Il-Nam), Tripathi Anupam (Abdul Ali).</h3>
-
-        </div>
-<img src=" https://images.app.goo.gl/tCzjUwATP8dL13Av5 "alt=" https://images.app.goo.gl/tCzjUwATP8dL13Av5 ">
-<h4>Assitam Round 6 é muito bom.</h4>
-
-        
-   <style>
-   h4{
-       color:purple
-       font-size: large;
-       font-style: calc(12)
-   }
-   </style>
-            </div>
+        function sub(x, y){
+            var Resultado = parseFloat(x) - parseFloat(y);
+            return Resultado;
+        }
+        function mult(x, y){
+            var Resultado = parseFloat(x) * parseFloat(y);
+            return Resultado;
+        }
+        function divisao(x, y){
+            var Resultado = parseFloat(x) / parseFloat(y);
+            return Resultado;
+        }
+    </script>
 </body>
 </html>
